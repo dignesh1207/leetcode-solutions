@@ -33,3 +33,23 @@ Explanation: The brackets are not closed in the correct order.
 Constraints:
 
 1 <= s.length <= 1000
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+
+        stack = []
+        pairs = {")": "(", "}": "{", "]": "["}
+
+        for char in s:
+            if char in "({[":
+                stack.append(char)        # opening bracket = push
+            elif char in ")}]":
+                if not stack or stack[-1] != pairs[char]:
+                    return False          # no match = invalid
+                stack.pop()               # match found = pop
+
+        return len(stack) == 0 
+
+    
+                  
+             
