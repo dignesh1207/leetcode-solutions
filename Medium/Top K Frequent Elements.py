@@ -24,7 +24,8 @@
 # 1 <= nums.length <= 10^4.
 # -1000 <= nums[i] <= 1000
 # 1 <= k <= number of distinct elements in nums.
-
+# Time Complexity: O(n log k)
+# Space Complexity: O(n)
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
